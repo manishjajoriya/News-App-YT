@@ -27,7 +27,7 @@ import com.manishjajoriya.kabar.presentation.onbording.components.PageIndicator
 import kotlinx.coroutines.launch
 
 @Composable
-fun OnBoardingScreen(innerPaddingValues: PaddingValues) {
+fun OnBoardingScreen(innerPaddingValues: PaddingValues, event: (OnBoardingEvent) -> Unit) {
   Column(modifier = Modifier.fillMaxSize().padding(innerPaddingValues)) {
     val pageState = rememberPagerState { pages.size }
 
@@ -72,8 +72,8 @@ fun OnBoardingScreen(innerPaddingValues: PaddingValues) {
           text = buttonState.value[1],
           onClick = {
             scope.launch {
-              if (pageState.currentPage == 3) {
-                // TODO : Navigate to Home Screen
+              if (pageState.currentPage == 2) {
+                event(OnBoardingEvent.SavedAppEntry)
               } else {
                 pageState.animateScrollToPage(pageState.currentPage + 1)
               }

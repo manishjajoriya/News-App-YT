@@ -1,11 +1,12 @@
 package com.manishjajoriya.kabar.domain.usecases
 
 import com.manishjajoriya.kabar.domain.manager.LocalUserManager
+import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 
-class ReadAppEntry(private val localUserManager: LocalUserManager) {
+class ReadAppEntry @Inject constructor(private val localUserManager: LocalUserManager) {
 
-  suspend fun invoke(): Flow<Boolean> {
+  operator fun invoke(): Flow<Boolean> {
     return localUserManager.readAppEntry()
   }
 }

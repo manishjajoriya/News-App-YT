@@ -3,6 +3,8 @@ plugins {
   alias(libs.plugins.kotlin.android)
   alias(libs.plugins.kotlin.compose)
   id("com.ncorti.ktfmt.gradle") version ("0.22.0")
+  id("com.google.dagger.hilt.android")
+  id("com.google.devtools.ksp")
 }
 
 allprojects {
@@ -24,6 +26,11 @@ android {
     versionName = "1.0"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+    compileOptions {
+      sourceCompatibility = JavaVersion.VERSION_1_8
+      targetCompatibility = JavaVersion.VERSION_1_8
+    }
   }
 
   buildTypes {
@@ -63,4 +70,7 @@ dependencies {
   // DataStore Preferences
   implementation("androidx.datastore:datastore-preferences:1.1.7")
 
+  // Dagger Hilt
+  implementation("com.google.dagger:hilt-android:2.56.2")
+  ksp("com.google.dagger:hilt-android-compiler:2.56.2")
 }
