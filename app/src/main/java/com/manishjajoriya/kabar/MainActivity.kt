@@ -8,8 +8,11 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.manishjajoriya.kabar.presentation.navgraph.NavGraph
 import com.manishjajoriya.kabar.ui.theme.KabarTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -25,6 +28,14 @@ class MainActivity : ComponentActivity() {
     enableEdgeToEdge()
     setContent {
       val isSystemInDarkMode = isSystemInDarkTheme()
+      val systemController = rememberSystemUiController()
+
+      SideEffect {
+        systemController.setSystemBarsColor(
+          color = Color.Transparent,
+          darkIcons = !isSystemInDarkMode,
+        )
+      }
       KabarTheme {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
           val startDestination = viewModel.startDestination

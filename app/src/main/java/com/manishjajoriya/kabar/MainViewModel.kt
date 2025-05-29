@@ -27,11 +27,12 @@ class MainViewModel @Inject constructor(private val appEntryUseCases: AppEntryUs
     appEntryUseCases
       .readAppEntry()
       .onEach { shouldStartFromHomeScreen ->
-        startDestination = if (shouldStartFromHomeScreen) {
-          Route.NewsNavigation.route
-        } else {
-          Route.AppStartNavigation.route
-        }
+        startDestination =
+          if (shouldStartFromHomeScreen) {
+            Route.NewsNavigation.route
+          } else {
+            Route.AppStartNavigation.route
+          }
         delay(2000)
         splashCondition = false
       }

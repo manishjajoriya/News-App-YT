@@ -32,7 +32,9 @@ fun NavGraph(innerPadding: PaddingValues, startDestination: String) {
       route = Route.NewsNavigation.route,
       startDestination = Route.NewsNavigationScreen.route,
     ) {
-      composable(route = Route.NewsNavigationScreen.route) { Text(text = "News Navigation Screen", modifier = Modifier.padding(innerPadding)) }
+      composable(route = Route.NewsNavigationScreen.route) {
+        Text(text = "News Navigation Screen", modifier = Modifier.padding(innerPadding))
+      }
     }
   }
 }
