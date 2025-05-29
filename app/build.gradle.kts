@@ -5,6 +5,7 @@ plugins {
   id("com.ncorti.ktfmt.gradle") version ("0.22.0")
   id("com.google.dagger.hilt.android")
   id("com.google.devtools.ksp")
+  kotlin("plugin.serialization") version "2.0.21"
 }
 
 allprojects {
@@ -48,6 +49,8 @@ android {
 }
 
 dependencies {
+  val nav_version = "2.9.0"
+
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.lifecycle.runtime.ktx)
   implementation(libs.androidx.activity.compose)
@@ -67,10 +70,14 @@ dependencies {
   // Splash Screen
   implementation("androidx.core:core-splashscreen:1.0.0")
 
+  // Navigation
+  implementation("androidx.navigation:navigation-compose:$nav_version")
+
   // DataStore Preferences
   implementation("androidx.datastore:datastore-preferences:1.1.7")
 
   // Dagger Hilt
   implementation("com.google.dagger:hilt-android:2.56.2")
   ksp("com.google.dagger:hilt-android-compiler:2.56.2")
+  implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 }
