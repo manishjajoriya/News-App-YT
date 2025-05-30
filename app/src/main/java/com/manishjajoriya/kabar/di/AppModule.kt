@@ -3,9 +3,9 @@ package com.manishjajoriya.kabar.di
 import android.app.Application
 import com.manishjajoriya.kabar.data.manager.LocalUserManagerImpl
 import com.manishjajoriya.kabar.domain.manager.LocalUserManager
-import com.manishjajoriya.kabar.domain.usecases.AppEntryUseCases
-import com.manishjajoriya.kabar.domain.usecases.ReadAppEntry
-import com.manishjajoriya.kabar.domain.usecases.SaveAppEntry
+import com.manishjajoriya.kabar.domain.usecases.app_entry.AppEntryUseCases
+import com.manishjajoriya.kabar.domain.usecases.app_entry.ReadAppEntry
+import com.manishjajoriya.kabar.domain.usecases.app_entry.SaveAppEntry
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -83,4 +83,11 @@ dependencies {
 
   // System UI
   implementation("com.google.accompanist:accompanist-systemuicontroller:0.31.4-beta")
+
+  // Retrofit
+  implementation("com.squareup.retrofit2:retrofit:2.9.0")
+  implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+  // Paging
+  implementation("androidx.paging:paging-runtime:3.2.1")
 }

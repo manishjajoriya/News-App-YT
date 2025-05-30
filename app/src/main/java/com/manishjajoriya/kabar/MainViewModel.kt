@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.manishjajoriya.kabar.domain.usecases.AppEntryUseCases
+import com.manishjajoriya.kabar.domain.usecases.app_entry.AppEntryUseCases
 import com.manishjajoriya.kabar.presentation.navgraph.Route
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

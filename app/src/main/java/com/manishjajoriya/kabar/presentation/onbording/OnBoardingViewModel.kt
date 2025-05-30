@@ -2,7 +2,7 @@ package com.manishjajoriya.kabar.presentation.onbording
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.manishjajoriya.kabar.domain.usecases.AppEntryUseCases
+import com.manishjajoriya.kabar.domain.usecases.app_entry.AppEntryUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.launch
