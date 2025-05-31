@@ -90,4 +90,7 @@ dependencies {
 
   // Paging
   implementation("androidx.paging:paging-runtime:3.2.1")
+
+  // Coil Ima
+  implementation("io.coil-kt.coil3:coil-compose:3.2.0")
 }
